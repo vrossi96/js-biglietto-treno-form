@@ -15,18 +15,18 @@ Il recap dei dati e l'output del prezzo finale va stampato in pagina (formattato
 
 //* Chiedo i dati
 // Const input
-const userName = document.getElementById('name-input');
-const userDistance = document.getElementById('distance-input');
-const userAge = document.getElementById('age-input');
+const userName = document.getElementById('name-input').value;
+const userDistance = document.getElementById('distance-input').value;
+const userAge = document.getElementById('age-input').value;
 const buttonGenerate = document.getElementById('generate');
 const buttonClear = document.getElementById('clear');
 // Const Show
 const showName = document.getElementById('show-name');
 const showPrice = document.getElementById('show-price');
 
-console.log('User Name: ', userName.value);
-console.log('User KM: ', userDistance.value);
-console.log('User Age: ', userAge.value);
+console.log('User Name: ', userName);
+console.log('User KM: ', userDistance);
+console.log('User Age: ', userAge);
 
 
 //* Creo variabili per il prezzo del biglietto
@@ -37,35 +37,35 @@ let finalPrice;
 buttonGenerate.addEventListener ('click', function() {
 
 // Calcolo prezzo iniziale del biglietto 
-let ticketPrice = userDistance.value * 0.21;
+let ticketPrice = userDistance * 0.21;
 let finalPrice;
 
 // Controllo l'età del passegero
-if (userAge.value == 'no-age') {
+if (userAge == 'no-age') {
    alert("Seleziona l'età");
-} else if (userAge.value == 'under-age') {
+} else if (userAge == 'under-age') {
    finalPrice = ticketPrice * 0.8;
-} else if (userAge.value == 'old-age') {
+} else if (userAge == 'old-age') {
    finalPrice = ticketPrice * 0.6;
 } else {
    finalPrice = ticketPrice;
 }
 
 //* Controllo che in console sia tutto giusto
-console.log('User Name: ', userName.value);
-console.log('User KM: ', userDistance.value);
-console.log('User Age: ', userAge.value);
+console.log('User Name: ', userName);
+console.log('User KM: ', userDistance);
+console.log('User Age: ', userAge);
 console.log('Ticket price: ', finalPrice);
 
 //* Mostro risultati in pagina
-showName.innerText = userName.value;
+showName.innerText = userName;
 showPrice.innerText = finalPrice.toFixed(2);
 })
 
 //* Resetto i campi di input
 buttonClear.addEventListener ('click', function() {
-userName.value = '';
-userDistance.value = '';
-userAge.value = 'no-age';
+userName = '';
+userDistance = '';
+userAge = 'no-age';
 })
 
