@@ -65,6 +65,10 @@ if (!userNameV || !isNaN(userNameV) || userDistanceV <= 0 || isNaN(userDistanceV
       ticketType = 'Biglietto STANDARD';
    }
    
+   userName.value = '';
+   userDistance.value = '';
+   userAge.value = 'no-age';
+
    //* Controllo che in console sia tutto giusto
    console.log('User Name: ', userNameV);
    console.log('User KM: ', userDistanceV);
@@ -88,4 +92,3 @@ userName.value = '';
 userDistance.value = '';
 userAge.value = 'no-age';
 })
-
