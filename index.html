@@ -11,19 +11,25 @@
 
 <body>
    <!-- Nome e cognome -->
-   <label for="name">Nome e Cognome</label>
-   <input type="text" id="name" value="">
+   <label for="name-input">Nome e Cognome</label>
+   <input type="text" id="name-input" value="">
    <!-- Distanza -->
-   <label for="distance">KM da percorrere</label>
-   <input type="text" id="distance" value="">
+   <label for="distance-input">KM da percorrere</label>
+   <input type="text" id="distance-input" value="">
    <!-- Età -->
-   <label for="age">Fascia d'età</label>
-   <select name="age" id="age">
+   <label for="age-input">Fascia d'età</label>
+   <select name="age-input" id="age-input">
       <option value="no-age">Seleziona</option>
       <option value="under-age">Minorenne</option>
       <option value="normal-age">18 - 65 anni</option>
       <option value="old-age">Over 65</option>
    </select>
+   <!-- Vari pulsanti per generare il biglietto annullare -->
+   <button id="generate">Genera</button>
+   <button id="clear">Annulla</button>
+   <p id="show-name"></p>
+   <p id="show-price"></p>
+   <p id="show"></p>
    <script src="js/script.js"></script>
 </body>
 
