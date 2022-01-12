@@ -1,0 +1,22 @@
+body {
+  background-color: #b91450;
+}
+
+#input-container,
+#print-container {
+  background-color: #fff;
+}
+
+#print-container .row > * {
+  padding-top: 10px;
+}
+#print-container .col.row {
+  border: 1px solid #808080;
+  border-right: none;
+  border-left: none;
+}
+
+#print-container .col-3 {
+  background-color: #808080;
+  height: 120px;
+}
