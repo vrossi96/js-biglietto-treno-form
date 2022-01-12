@@ -12,68 +12,83 @@
 </head>
 
 <body>
-   <!-- Container input -->
-   <div id="input-container" class="container my-5">
-      <div class="row p-3">
-         <!-- Nome e cognome -->
-         <div class="col-4 row">
-            <label for="name-input" class="col-6 offset-3 text-center">Nome e Cognome</label>
-            <input type="text" id="name-input" value="" class="col-6 offset-3">
-         </div>
-         <!-- Distanza -->
-         <div class="col-4 row">
-            <label for="distance-input" class="col-6 offset-3 text-center">KM da percorrere</label>
-            <input type="text" id="distance-input" value="" class="col-6 offset-3">
-         </div>
-         <!-- Età -->
-         <div class="col-4 row">
-            <label for="age-input" class="col-6 offset-3 text-center">Fascia d'età</label>
-            <select name="age-input" id="age-input" class="col-6 offset-3">
-               <option value="no-age">Seleziona</option>
-               <option value="under-age">Minorenne</option>
-               <option value="normal-age">18 - 65 anni</option>
-               <option value="old-age">Over 65</option>
-            </select>
-         </div>
-         <!-- Vari pulsanti per generare il biglietto annullare -->
-         <div class="col-4 offset-4 text-center pt-5">
-            <button id="generate">Genera</button>
-            <button id="clear">Annulla</button>
-         </div>
-      </div>
-   </div>
-   <!-- Container Risultati del biglietto -->
-   <div id="print-container" class="container my-5">
-      <div class="row p-3">
+   <div id="mega-container" class="container">
+      <!-- Titolo input -->
+      <div class="row">
          <div class="col-12">
-            <h5 class="fw-bold">DETTAGLIO PASSEGGERI</h5>
-         </div>
-         <!-- Nome e cognome -->
-         <div class="col-3">
-            <h5 class="fw-bold text-center">NOME PASSEGGERO</h5>
-            <h5 class="text-center fw-bold" id="show-name"></h5>
-         </div>
-         <!-- Tipo biglietto e offerta -->
-         <div class="col row flex-column justify-content-between">
-            <h6 class="fw-bold">Offerta</h6>
-            <p id="show-ticket-type"></p>
-         </div>
-         <!-- Numero carrozza -->
-         <div class="col row flex-column justify-content-between">
-            <h6 class="fw-bold">Carrozza</h6>
-            <p id="show-wagon"></p>
-         </div>
-         <!-- Codice biglietto -->
-         <div class="col row flex-column justify-content-between">
-            <h6 class="fw-bold">Codice CP</h6>
-            <p id="show-cp"></p>
-         </div>
-         <!-- Prezzo finale -->
-         <div class="col row flex-column justify-content-between me-2">
-            <h6 class="fw-bold">Costo Biglietto</h6>
-            <p id="show-price"></p>
+            <h1 class="text-uppercase fw-bold text-center pt-3 text-white">Calcola il prezzo del tuo biglietto</h1>
          </div>
       </div>
+      <!-- Container input -->
+      <div id="input-container" class="container shadow-lg">
+         <div class="row p-3">
+            <!-- Nome e cognome -->
+            <div class="col-4 row">
+               <label for="name-input" class="col-6 offset-3 text-center">Nome e Cognome</label>
+               <input type="text" id="name-input" value="" class="col-6 offset-3">
+            </div>
+            <!-- Distanza -->
+            <div class="col-4 row">
+               <label for="distance-input" class="col-6 offset-3 text-center">KM da percorrere</label>
+               <input type="text" id="distance-input" value="" class="col-6 offset-3">
+            </div>
+            <!-- Età -->
+            <div class="col-4 row">
+               <label for="age-input" class="col-6 offset-3 text-center">Fascia d'età</label>
+               <select name="age-input" id="age-input" class="col-6 offset-3">
+                  <option value="no-age">Seleziona</option>
+                  <option value="under-age">Minorenne</option>
+                  <option value="normal-age">18 - 65 anni</option>
+                  <option value="old-age">Over 65</option>
+               </select>
+            </div>
+            <!-- Vari pulsanti per generare il biglietto annullare -->
+            <div class="col-4 offset-4 text-center pt-5">
+               <button id="generate">Genera</button>
+               <button id="clear">Annulla</button>
+            </div>
+         </div>
+      </div>
+      <!-- Titolo risultati -->
+      <div class="row">
+         <div class="col-12">
+            <h1 class="text-uppercase fw-bold text-center pt-3 text-white">il tuo biglietto</h1>
+         </div>
+      </div>
+      <!-- Container Risultati del biglietto -->
+      <div id="print-container" class="container">
+         <div class="row p-3">
+            <div class="col-12">
+               <h5 class="fw-bold">DETTAGLIO PASSEGGERI</h5>
+            </div>
+            <!-- Nome e cognome -->
+            <div class="col-3">
+               <h5 class="fw-bold text-center">NOME PASSEGGERO</h5>
+               <h5 class="text-center fw-bold" id="show-name"></h5>
+            </div>
+            <!-- Tipo biglietto e offerta -->
+            <div class="col row flex-column justify-content-between">
+               <h6 class="fw-bold">Offerta</h6>
+               <p id="show-ticket-type"></p>
+            </div>
+            <!-- Numero carrozza -->
+            <div class="col row flex-column justify-content-between">
+               <h6 class="fw-bold">Carrozza</h6>
+               <p id="show-wagon"></p>
+            </div>
+            <!-- Codice biglietto -->
+            <div class="col row flex-column justify-content-between">
+               <h6 class="fw-bold">Codice CP</h6>
+               <p id="show-cp"></p>
+            </div>
+            <!-- Prezzo finale -->
+            <div class="col row flex-column justify-content-between me-2">
+               <h6 class="fw-bold">Costo Biglietto</h6>
+               <p id="show-price"></p>
+            </div>
+         </div>
+      </div>
+
    </div>
    <script src="js/script.js"></script>
 </body>

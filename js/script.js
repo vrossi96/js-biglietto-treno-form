@@ -38,9 +38,9 @@ let ticketCP;
 //* Creo evento al click con calcolo prezzo e stampa
 buttonGenerate.addEventListener ('click', function() {
 // Metto nelle variabili il valore degli input
-let userNameV = userName.value;
-let userDistanceV = userDistance.value;
-let userAgeV = userAge.value;
+const userNameV = userName.value;
+const userDistanceV = userDistance.value;
+const userAgeV = userAge.value;
 
 if (!userNameV || !isNaN(userNameV) || userDistanceV <= 0 || isNaN(userDistanceV)) {
    alert('Controllare i dati inseriti');

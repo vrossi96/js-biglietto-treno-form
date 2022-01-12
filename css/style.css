@@ -2,11 +2,16 @@ body {
   background-color: #b91450;
 }
 
+#input-container {
+  border-radius: 20px;
+}
+
 #input-container,
 #print-container {
   background-color: #fff;
 }
 
+/* Print container */
 #print-container .row > * {
   padding-top: 10px;
 }
