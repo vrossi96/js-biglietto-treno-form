@@ -22,8 +22,10 @@ const buttonGenerate = document.getElementById('generate');
 const buttonClear = document.getElementById('clear');
 // Const Show
 const showName = document.getElementById('show-name');
-const showPrice = document.getElementById('show-price');
 const showTicketType = document.getElementById('show-ticket-type');
+const showWagon = document.getElementById('show-wagon');
+const showCP = document.getElementById('show-cp');
+const showPrice = document.getElementById('show-price');
 
 console.log('User Name: ', userName.value);
 console.log('User KM: ', userDistance.value);
@@ -34,6 +36,8 @@ console.log('User Age: ', userAge.value);
 let ticketPrice;
 let finalPrice;
 let ticketType;
+let wagonNumber;
+let ticketCP;
 
 //* Creo evento al click con calcolo prezzo e stampa
 buttonGenerate.addEventListener ('click', function() {
@@ -41,6 +45,8 @@ buttonGenerate.addEventListener ('click', function() {
 // Calcolo prezzo iniziale del biglietto 
 let ticketPrice = userDistance.value * 0.21;
 let finalPrice;
+wagonNumber = Math.floor(Math.random() * 12) + 1;
+ticketCP = Math.floor(Math.random() * 100000) + 1;
 
 // Controllo l'età del passegero
 if (userAge.value == 'no-age') {
@@ -61,11 +67,14 @@ console.log('User Name: ', userName.value);
 console.log('User KM: ', userDistance.value);
 console.log('User Age: ', userAge.value);
 console.log('Ticket price: ', finalPrice);
+console.log('Ticket type: ', ticketType);
 
 //* Mostro risultati in pagina
 showName.innerText = userName.value;
 showPrice.innerText = finalPrice.toFixed(2);
 showTicketType.innerText = ticketType;
+showWagon.innerText = wagonNumber;
+showCP.innerText = ticketCP;
 })
 
 //* Resetto i campi di input
