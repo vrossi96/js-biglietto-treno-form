@@ -15,57 +15,63 @@ Il recap dei dati e l'output del prezzo finale va stampato in pagina (formattato
 
 //* Chiedo i dati
 // Const input
-const userName = document.getElementById('name-input').value;
-const userDistance = document.getElementById('distance-input').value;
-const userAge = document.getElementById('age-input').value;
+const userName = document.getElementById('name-input');
+const userDistance = document.getElementById('distance-input');
+const userAge = document.getElementById('age-input');
 const buttonGenerate = document.getElementById('generate');
 const buttonClear = document.getElementById('clear');
 // Const Show
 const showName = document.getElementById('show-name');
 const showPrice = document.getElementById('show-price');
+const showTicketType = document.getElementById('show-ticket-type');
 
-console.log('User Name: ', userName);
-console.log('User KM: ', userDistance);
-console.log('User Age: ', userAge);
+console.log('User Name: ', userName.value);
+console.log('User KM: ', userDistance.value);
+console.log('User Age: ', userAge.value);
 
 
 //* Creo variabili per il prezzo del biglietto
 let ticketPrice;
 let finalPrice;
+let ticketType;
 
 //* Creo evento al click con calcolo prezzo e stampa
 buttonGenerate.addEventListener ('click', function() {
 
 // Calcolo prezzo iniziale del biglietto 
-let ticketPrice = userDistance * 0.21;
+let ticketPrice = userDistance.value * 0.21;
 let finalPrice;
 
 // Controllo l'età del passegero
-if (userAge == 'no-age') {
+if (userAge.value == 'no-age') {
    alert("Seleziona l'età");
-} else if (userAge == 'under-age') {
+} else if (userAge.value == 'under-age') {
    finalPrice = ticketPrice * 0.8;
-} else if (userAge == 'old-age') {
+   ticketType = 'Biglietto UNDER';
+} else if (userAge.value == 'old-age') {
    finalPrice = ticketPrice * 0.6;
+   ticketType = 'Biglietto OVER';
 } else {
    finalPrice = ticketPrice;
+   ticketType = 'Biglietto STANDARD';
 }
 
 //* Controllo che in console sia tutto giusto
-console.log('User Name: ', userName);
-console.log('User KM: ', userDistance);
-console.log('User Age: ', userAge);
+console.log('User Name: ', userName.value);
+console.log('User KM: ', userDistance.value);
+console.log('User Age: ', userAge.value);
 console.log('Ticket price: ', finalPrice);
 
 //* Mostro risultati in pagina
-showName.innerText = userName;
+showName.innerText = userName.value;
 showPrice.innerText = finalPrice.toFixed(2);
+showTicketType.innerText = ticketType;
 })
 
 //* Resetto i campi di input
 buttonClear.addEventListener ('click', function() {
-userName = '';
-userDistance = '';
-userAge = 'no-age';
+userName.value = '';
+userDistance.value = '';
+userAge.value = 'no-age';
 })
 
