@@ -12,6 +12,8 @@ Il recap dei dati e l'output del prezzo finale va stampato in pagina (formattato
 2-Chiedo i km da percorrere
 3-Chiedo l'età
 */
+
+//* Chiedo i dati
 const userName = document.getElementById('name');
 const userDistance = document.getElementById('distance');
 const userAge = document.getElementById('age');
@@ -20,3 +22,13 @@ console.log('User Name: ', userName.value);
 console.log('User KM: ', userDistance.value);
 console.log('User Age: ', userAge.value);
 
+
+//* Calcolo prezzo biglietto
+const ticketPrice = userDistance.value * 0.21;
+console.log(ticketPrice);
+
+if (userAge.value == 'no-age') {
+   alert("Seleziona l'età");
+} else if (userAge.value == 'under-age') {
+
+}
