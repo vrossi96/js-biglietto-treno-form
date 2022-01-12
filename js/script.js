@@ -27,10 +27,6 @@ const showWagon = document.getElementById('show-wagon');
 const showCP = document.getElementById('show-cp');
 const showPrice = document.getElementById('show-price');
 
-console.log('User Name: ', userName.value);
-console.log('User KM: ', userDistance.value);
-console.log('User Age: ', userAge.value);
-
 
 //* Creo variabili per il prezzo del biglietto
 let ticketPrice;
@@ -41,40 +37,43 @@ let ticketCP;
 
 //* Creo evento al click con calcolo prezzo e stampa
 buttonGenerate.addEventListener ('click', function() {
-
-// Calcolo prezzo iniziale del biglietto 
-let ticketPrice = userDistance.value * 0.21;
-let finalPrice;
-wagonNumber = Math.floor(Math.random() * 12) + 1;
-ticketCP = Math.floor(Math.random() * 100000) + 1;
-
-// Controllo l'età del passegero
-if (userAge.value == 'no-age') {
-   alert("Seleziona l'età");
-} else if (userAge.value == 'under-age') {
-   finalPrice = ticketPrice * 0.8;
-   ticketType = 'Biglietto UNDER';
-} else if (userAge.value == 'old-age') {
-   finalPrice = ticketPrice * 0.6;
-   ticketType = 'Biglietto OVER';
+if (!userName.value || !isNaN(userName.value) || userDistance.value <= 0 || isNaN(userDistance.value)) {
+   alert('Controllare i dati inseriti');
 } else {
-   finalPrice = ticketPrice;
-   ticketType = 'Biglietto STANDARD';
+   // Calcolo prezzo iniziale del biglietto 
+   let ticketPrice = userDistance.value * 0.21;
+   let finalPrice;
+   wagonNumber = Math.floor(Math.random() * 12) + 1;
+   ticketCP = Math.floor(Math.random() * 100000) + 1;
+   
+   // Controllo l'età del passegero
+   if (userAge.value == 'no-age') {
+      alert("Seleziona l'età");
+   } else if (userAge.value == 'under-age') {
+      finalPrice = ticketPrice * 0.8;
+      ticketType = 'Biglietto UNDER';
+   } else if (userAge.value == 'old-age') {
+      finalPrice = ticketPrice * 0.6;
+      ticketType = 'Biglietto OVER';
+   } else {
+      finalPrice = ticketPrice;
+      ticketType = 'Biglietto STANDARD';
+   }
+   
+   //* Controllo che in console sia tutto giusto
+   console.log('User Name: ', userName.value);
+   console.log('User KM: ', userDistance.value);
+   console.log('User Age: ', userAge.value);
+   console.log('Ticket price: ', finalPrice);
+   console.log('Ticket type: ', ticketType);
+   
+   //* Mostro risultati in pagina
+   showName.innerText = userName.value.trim();
+   showPrice.innerText = finalPrice.toFixed(2);
+   showTicketType.innerText = ticketType;
+   showWagon.innerText = wagonNumber;
+   showCP.innerText = ticketCP;
 }
-
-//* Controllo che in console sia tutto giusto
-console.log('User Name: ', userName.value);
-console.log('User KM: ', userDistance.value);
-console.log('User Age: ', userAge.value);
-console.log('Ticket price: ', finalPrice);
-console.log('Ticket type: ', ticketType);
-
-//* Mostro risultati in pagina
-showName.innerText = userName.value;
-showPrice.innerText = finalPrice.toFixed(2);
-showTicketType.innerText = ticketType;
-showWagon.innerText = wagonNumber;
-showCP.innerText = ticketCP;
 })
 
 //* Resetto i campi di input
