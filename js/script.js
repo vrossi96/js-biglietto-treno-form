@@ -10,4 +10,5 @@ Il recap dei dati e l'output del prezzo finale va stampato in pagina (formattato
 
 1-Chiedo nome e cognome
 2-Chiedo i km da percorrere
+3-Chiedo l'età
 */
