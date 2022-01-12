@@ -74,7 +74,7 @@ if (!userNameV || !isNaN(userNameV) || userDistanceV <= 0 || isNaN(userDistanceV
    
    //* Mostro risultati in pagina
    showName.innerText = userNameV.trim();
-   showPrice.innerText = finalPrice.toFixed(2);
+   showPrice.innerHTML = `${finalPrice.toFixed(2)} &#8364;`;
    showTicketType.innerText = ticketType;
    showWagon.innerText = wagonNumber;
    showCP.innerText = ticketCP;
