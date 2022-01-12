@@ -37,23 +37,26 @@ let ticketCP;
 
 //* Creo evento al click con calcolo prezzo e stampa
 buttonGenerate.addEventListener ('click', function() {
-   
-if (!userName.value || !isNaN(userName.value) || userDistance.value <= 0 || isNaN(userDistance.value)) {
+let userNameV = userName.value;
+let userDistanceV = userDistance.value;
+let userAgeV = userAge.value;
+
+if (!userNameV || !isNaN(userNameV) || userDistanceV <= 0 || isNaN(userDistanceV)) {
    alert('Controllare i dati inseriti');
 } else {
    // Calcolo prezzo iniziale del biglietto 
-   let ticketPrice = userDistance.value * 0.21;
+   let ticketPrice = userDistanceV * 0.21;
    let finalPrice;
    wagonNumber = Math.floor(Math.random() * 12) + 1;
    ticketCP = Math.floor(Math.random() * 100000) + 1;
    
    // Controllo l'età del passegero
-   if (userAge.value == 'no-age') {
+   if (userAgeV == 'no-age') {
       alert("Seleziona l'età");
-   } else if (userAge.value == 'under-age') {
+   } else if (userAgeV == 'under-age') {
       finalPrice = ticketPrice * 0.8;
       ticketType = 'Biglietto UNDER';
-   } else if (userAge.value == 'old-age') {
+   } else if (userAgeV == 'old-age') {
       finalPrice = ticketPrice * 0.6;
       ticketType = 'Biglietto OVER';
    } else {
@@ -62,14 +65,14 @@ if (!userName.value || !isNaN(userName.value) || userDistance.value <= 0 || isNa
    }
    
    //* Controllo che in console sia tutto giusto
-   console.log('User Name: ', userName.value);
-   console.log('User KM: ', userDistance.value);
-   console.log('User Age: ', userAge.value);
+   console.log('User Name: ', userNameV);
+   console.log('User KM: ', userDistanceV);
+   console.log('User Age: ', userAgeV);
    console.log('Ticket price: ', finalPrice);
    console.log('Ticket type: ', ticketType);
    
    //* Mostro risultati in pagina
-   showName.innerText = userName.value.trim();
+   showName.innerText = userNameV.trim();
    showPrice.innerText = finalPrice.toFixed(2);
    showTicketType.innerText = ticketType;
    showWagon.innerText = wagonNumber;
