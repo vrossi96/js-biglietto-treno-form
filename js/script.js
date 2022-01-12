@@ -37,6 +37,7 @@ let ticketCP;
 
 //* Creo evento al click con calcolo prezzo e stampa
 buttonGenerate.addEventListener ('click', function() {
+   
 if (!userName.value || !isNaN(userName.value) || userDistance.value <= 0 || isNaN(userDistance.value)) {
    alert('Controllare i dati inseriti');
 } else {
@@ -74,6 +75,7 @@ if (!userName.value || !isNaN(userName.value) || userDistance.value <= 0 || isNa
    showWagon.innerText = wagonNumber;
    showCP.innerText = ticketCP;
 }
+
 })
 
 //* Resetto i campi di input
